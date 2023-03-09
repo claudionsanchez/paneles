@@ -1,0 +1,156 @@
+<!-- inicio.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICAR WEB</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos.css' %}">
+
+    <style>
+        body {
+            background-image: url('/static/img/Lampara.jpg');
+            background-size: cover;
+            color: rgb(161, 158, 158);
+            font-style: italic;
+            font-family: Georgia; text-align: justify;
+
+        }
+    
+        h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        h5 {
+            text-align: Left;
+            text-decoration: underline;
+        }        
+    
+		.popup {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 300px;
+			height: 200px;
+			padding: 10px;
+			background-image: url('/static/img/pexels-karolina-grabowska-4210787.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+			border: 1px solid #000;
+			z-index: 9999;
+			text-align: justify;
+		}
+		.popup h2 {
+			text-align: center;
+			margin-top: 0;
+            line-height: 0.8em;
+            color: rgb(41, 33, 43);
+		}
+		.popup p {
+			text-align: justify;
+			margin-top: 20px;
+            /* font-family: Consolas, monospace; */
+            font-family: Georgia, serif;
+            color: rgb(41, 33, 43);
+
+		}
+		.popup button {
+			display: block;
+			margin: 20px auto 0;
+		}
+    
+    </style> 
+</head>
+
+<body>
+    <h1 style="margin-bottom: 0;">ICAR - Ingeniería Civil Argentina sector energía</h1>
+    <h1 style="margin-top: 0;">Sector Energía</h1>    
+    <p>&nbsp;&nbsp;Bienvenido y gracias por visitar nuestro sitio web de venta de Paneles Solares e Inversores CC/CA.</p>
+    <p>&nbsp;&nbsp;Las energías alternativas son fuentes de energía renovable que se utilizan para producir electricidad, calor y combustibles. A diferencia de los combustibles fósiles como el petróleo, el carbón y el gas natural, que son finitos y tienen un impacto negativo en el medio ambiente, las energías alternativas son fuentes limpias e inagotables.</p>
+    <p>&nbsp;&nbsp;Algunos ejemplos de energías alternativas son la energía solar, eólica, hidroeléctrica, geotérmica, de biomasa y de residuos. Estas energías pueden ser utilizadas para satisfacer las necesidades de energía en hogares, empresas e industrias, y su uso tiene numerosos beneficios.</p>
+    <p>&nbsp;&nbsp;En primer lugar, las energías alternativas son sostenibles y no agotan los recursos naturales, lo que las hace una opción más viable a largo plazo que los combustibles fósiles. Además, el uso de energías alternativas reduce la dependencia de los combustibles importados, lo que mejora la seguridad energética y reduce la vulnerabilidad a las fluctuaciones de los precios del petróleo.</p>
+    <p>&nbsp;&nbsp;En segundo lugar, las energías alternativas son más limpias y tienen un menor impacto ambiental que los combustibles fósiles. Al reducir las emisiones de gases de efecto invernadero y otros contaminantes, las energías alternativas contribuyen a combatir el cambio climático y mejoran la calidad del aire y del agua.</p>
+    <p>&nbsp;&nbsp;En tercer lugar, el uso de energías alternativas puede generar empleo y estimular el crecimiento económico. La inversión en energías alternativas crea puestos de trabajo en sectores como la fabricación, la instalación y el mantenimiento de equipos de energía renovable, lo que beneficia a las comunidades locales y a la economía en general.</p>
+    <p>&nbsp;&nbsp;En resumen, el uso de energías alternativas es una opción sostenible, limpia y económicamente viable para satisfacer las necesidades de energía en hogares, empresas e industrias. Con una inversión adecuada en tecnologías de energía renovable y una mayor conciencia sobre los beneficios de estas energías, podemos avanzar hacia un futuro más limpio y sostenible.</p>
+    <p>&nbsp;&nbsp;La <span style="font-size:larger; color:yellow; text-decoration: underline;">Energía Solar</span>  es una de las fuentes de energía renovable más populares y con mayor crecimiento en todo el mundo. Esta forma de energía aprovecha la luz solar y la convierte en electricidad a través de paneles solares. Una vez que se han instalado los paneles solares, la energía solar producida es gratuita y rentable a largo plazo. La energía solar es perfecta 
+        para utilizada en zonas remotas donde no existe acceso a la red eléctrica y reduce la dependencia de combustibles fósiles. En resumen, la energía solar es una forma de energía limpia, renovable y rentable que ofrece múltiples beneficios ambientales y económicos. Es la fuente con mayor crecimiento en todo el mundo. 
+        Una vez que se han instalado los paneles solares, la energía solar producida es gratuita y rentable a largo plazo. La energía solar es perfecta para utilizada en zonas remotas donde no existe acceso a la red eléctrica y puede contribuir a reducir 
+        la dependencia de combustibles fósiles.</p>   
+
+    <div id="botones">
+        <button onclick="abrirPdf('{% static 'Pequeña memoria descriptiva.pdf' %}')" style="border: 2px solid blue; background-color: transparent; color: white;" onmouseover="this.style.backgroundColor='blue'" onmouseout="this.style.backgroundColor='transparent'"> Explicacion del funcionamiento del sistema solar  </button>
+        <button onclick="abrirPdf('{% static 'panel.pdf' %}')" style="border: 2px solid blue; background-color: transparent; color: white;" onmouseover="this.style.backgroundColor='blue'" onmouseout="this.style.backgroundColor='transparent'">Folleto Panel 410Wp</button>
+        <button onclick="abrirPdf('{% static 'inversor.pdf' %}')" style="border: 2px solid blue; background-color: transparent; color: white;" onmouseover="this.style.backgroundColor='blue'" onmouseout="this.style.backgroundColor='transparent'">Folleto Inversor 5000W</button>
+        <!-- <button onclick="abrirPdf('{% static 'contacto.pdf' %}')" style="border: 2px solid white; background-color: transparent; color: black;" onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='transparent'">Contacto</button> -->
+        <!-- <button onclick="mostrarVentana3()" style="border: 2px solid blue; background-color: transparent; color: white;" onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='transparent'">Contacto</button> -->
+        <button onclick="mostrarPopup()" style="border: 2px solid blue; background-color: transparent; color: white;"onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='transparent'">'Contacto'</button>
+    </div>
+
+    <div class="popup" style="display:none;">
+        <h2>Contacto:</h2>
+        <p>ICAR - Ingeniería Civil Argentina.<br>
+         Calle 28 nrro. 1906 4C, (1900), La Plata, Bs.As., Argentina. <br>
+         Móvil/Wp: 221 5920609.-</p>
+        <button onclick="cerrarPopup()"style="border: 2px solid blue; background-color: transparent; color: black;"onmouseover="this.style.backgroundColor='red'" onmouseout="this.style.backgroundColor='transparent'">Cerrar</button>
+      </div> 
+
+    <style>
+        #botones {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    
+        #botones button {
+            margin-left: 10px;
+        }
+    </style>    
+  
+    <script>
+        function abrirPdf(nombrePdf) {
+            window.open(nombrePdf, '_blank');
+        }
+    </script>
+
+    <script>
+        function mostrarVentana1() {
+            document.getElementById("ventana1").style.display = "block";
+        }
+
+        function mostrarVentana2() {
+            document.getElementById("ventana2").style.display = "block";
+        }
+
+        function mostrarVentana3() {
+            document.getElementById("ventana3").style.display = "block";
+        }
+
+        function mostrarPopup() {
+            var popup = document.querySelector(".popup");
+            popup.style.display = "block";
+        }
+
+        function cerrarPopup() {
+            var popup = document.querySelector(".popup");
+            popup.style.display = "none";
+        }
+    </script>
+
+ 
+
+
+  
+    <!-- <div class="textbox">
+        <h2>Introduce tu mensaje</h2>
+        <form>
+            <textarea rows="4" cols="50" name="message"></textarea><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div> -->
+    
+
+</body>
+</html>
+

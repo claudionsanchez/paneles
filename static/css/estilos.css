@@ -1,0 +1,16 @@
+paneles/
+    manage.py
+    paneles/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+    static/
+        img/
+            IM1.jpg
+        css/
+            estilos.css
+    templates/
+        inicio.html
+
